@@ -61,6 +61,9 @@ public class FirstPersonController : MonoBehaviour
     public float walkSpeed = 5f;
     public float maxVelocityChange = 10f;
 
+    public float walkSoundInterval = 0.3f;
+    private float walkSoundTimer = 0f;
+
     // Internal Variables
     private bool isWalking = false;
 
@@ -381,10 +384,18 @@ public class FirstPersonController : MonoBehaviour
             if (targetVelocity.x != 0 || targetVelocity.z != 0 && isGrounded)
             {
                 isWalking = true;
+                walkSoundTimer += Time.deltaTime;
+
+                if (walkSoundTimer >= walkSoundInterval)
+                {
+                    SoundManager.Instance.PlayPlayerSFX(PlayerSfxSound.Step);
+                    walkSoundTimer = 0f;
+                }
             }
             else
             {
                 isWalking = false;
+                walkSoundTimer = 0f;
             }
 
             // All movement calculations shile sprint is active
@@ -622,6 +633,8 @@ public class FirstPersonController : MonoBehaviour
         GUI.enabled = fpc.playerCanMove;
         fpc.walkSpeed = EditorGUILayout.Slider(new GUIContent("Walk Speed", "Determines how fast the player will move while walking."), fpc.walkSpeed, .1f, fpc.sprintSpeed);
         GUI.enabled = true;
+
+        fpc.walkSoundInterval = EditorGUILayout.Slider(new GUIContent("walkSoundInterval"), fpc.walkSoundInterval, 0f, 1f);
 
         EditorGUILayout.Space();
 
