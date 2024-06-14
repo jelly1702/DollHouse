@@ -10,12 +10,10 @@ public enum PlayerSfxSound
 
 public enum MonsterSfxSound
 {
-    Attack = 0,
+    Step = 0,
     Die,
     Hit
 }
-
-
 
 public class SoundManager : Singleton<SoundManager>
 {
@@ -27,7 +25,7 @@ public class SoundManager : Singleton<SoundManager>
     public AudioClip[] playerSfxClips;
     public AudioClip[] playerStepSfxClips;
     public AudioClip[] monsterSfxClips;
-    public AudioClip[] monsterAttackSfxClips;
+    public AudioClip[] monsterStepSfxClips;
     [Header("AudioMixer")]
     public AudioMixerGroup backgroundMixerGroup;
     public AudioMixerGroup sfxMixerGroup;
@@ -59,6 +57,10 @@ public class SoundManager : Singleton<SoundManager>
                 int randomIndex = Random.Range(0, playerStepSfxClips.Length);
                 sfxSource.PlayOneShot(playerStepSfxClips[randomIndex]);
             }
+            else
+            {
+                sfxSource.PlayOneShot(monsterSfxClips[(int)sfxSound]);
+            }
         }
     }
 
@@ -66,10 +68,10 @@ public class SoundManager : Singleton<SoundManager>
     {
         if (sfxSource != null)
         {
-            if (sfxSound == MonsterSfxSound.Attack)
+            if (sfxSound == MonsterSfxSound.Step)
             {
-                int randomIndex = Random.Range(0, monsterAttackSfxClips.Length);
-                sfxSource.PlayOneShot(monsterAttackSfxClips[randomIndex]);
+                int randomIndex = Random.Range(0, monsterStepSfxClips.Length);
+                sfxSource.PlayOneShot(monsterStepSfxClips[randomIndex]);
             }
             else
             {
