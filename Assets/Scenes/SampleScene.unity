@@ -18128,7 +18128,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1222886185
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35025,7 +35025,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
+  far clip plane: 30
   field of view: 60
   orthographic: 0
   orthographic size: 5
@@ -35399,6 +35399,7 @@ MonoBehaviour:
   playerCanMove: 1
   walkSpeed: 4
   maxVelocityChange: 10
+  walkSoundInterval: 0.63
   enableSprint: 0
   unlimitedSprint: 0
   sprintKey: 304
@@ -35586,7 +35587,7 @@ Animator:
   m_GameObject: {fileID: 4459864850829453642}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 300daf9285262e1499442b8dee11faf6, type: 2}
+  m_Controller: {fileID: 0}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
