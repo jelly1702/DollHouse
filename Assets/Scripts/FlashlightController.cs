@@ -1,12 +1,13 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FlashlightController : MonoBehaviour
 {
     public Light flashlight;
-    private bool isOn = true;
     public Camera flashlightCamera;
+    public bool followMouse = true;
+    public LayerMask raycastLayerMask;
+
+    private bool isOn = true;
 
     void Update()
     {
@@ -15,7 +16,7 @@ public class FlashlightController : MonoBehaviour
             ToggleFlashlight();
         }
 
-        if (isOn)
+        if (isOn && followMouse)
         {
             FollowMouse();
         }
@@ -30,13 +31,11 @@ public class FlashlightController : MonoBehaviour
     void FollowMouse()
     {
         Ray ray = flashlightCamera.ScreenPointToRay(Input.mousePosition);
-
         RaycastHit hit;
 
-        if (Physics.Raycast(ray, out hit))
+        if (Physics.Raycast(ray, out hit, Mathf.Infinity, raycastLayerMask))
         {
             Vector3 targetDirection = hit.point - flashlight.transform.position;
-
             flashlight.transform.rotation = Quaternion.LookRotation(targetDirection);
         }
     }

@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class TrapTrigger : MonoBehaviour
 {
-    // 발동할 함정 오브젝트를 인스펙터에서 설정할 변수
     public GameObject trapObject;
     private bool hasActivated = false;
 
