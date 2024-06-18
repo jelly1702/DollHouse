@@ -6,11 +6,12 @@ public class ManController : MonoBehaviour
     private Rigidbody rb;
     public float forwardForce = 10f;
     public bool isMoving = true;
+    public float deactivateDelay = 2f;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        StartCoroutine(DeactivateObject(2f));
+        StartCoroutine(DeactivateObject(deactivateDelay));
     }
 
     void FixedUpdate()

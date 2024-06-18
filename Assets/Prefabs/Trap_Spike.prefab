@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 845282876607262354}
   - component: {fileID: 7189715551019064103}
   - component: {fileID: 4439814577023949578}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Trap_Spike
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ Animator:
   m_GameObject: {fileID: 2209273383857597046}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ad1ca68696eecec45ba84ae7b18dcc52, type: 2}
+  m_Controller: {fileID: 9100000, guid: 4074f8b5a4f034040a47ee0355b27db2, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -79,7 +79,9 @@ GameObject:
   - component: {fileID: 4629392934060963226}
   - component: {fileID: 4391260925963989681}
   - component: {fileID: 8028156465619173719}
-  m_Layer: 0
+  - component: {fileID: 8530923887878034555}
+  - component: {fileID: 7465793484565671648}
+  m_Layer: 8
   m_Name: Big_Spike_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -163,3 +165,45 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 54bfeea239e65a941bb9c1139954da33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &8530923887878034555
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8574941800284746502}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.15810113, y: 3.5557094, z: 0.16053987}
+  m_Center: {x: 0, y: -1.7778549, z: 0.00000023841858}
+--- !u!65 &7465793484565671648
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8574941800284746502}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.15810113, y: 3.5557094, z: 0.16053987}
+  m_Center: {x: 0, y: -1.7778549, z: 0.00000023841858}
